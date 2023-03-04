@@ -1,0 +1,49 @@
+{% extends 'paginas/base.html' %}
+{% block titulop %}Clientes - Curso Python Ponal{% endblock titulop %}
+{% block mensaje01 %}
+<div class="card text-center">
+    <div class="card-header">
+      Policia Nacional
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Clientes</h5>
+      
+      <table class="table table-success table-striped">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Genero</th>
+            <th scope="col">Foto</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for x in clientes %}  
+          <tr>
+            <th scope="row">{{x.id}}</th>
+            <td>{{x.nombre}}</td>
+            <td>{{x.edad}}</td>
+            <td>{{x.genero}}</td>
+            <td>
+                <!--{{x.foto}}-->
+                <img src="../{{x.foto}}" height = "50">
+            </td>
+            <td>
+                <button type="button" class="btn btn-success">Editar</button>
+                <button type="button" class="btn btn-danger">Eliminar</button>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
+    </div>
+    <div class="card-footer text-muted">
+        <button type="button" class="btn btn-primary">Adicionar Cliente</button>
+        <br>Implementando un crud
+    </div>
+  </div>
+{% endblock mensaje01 %}
