@@ -28,11 +28,11 @@
             <td>{{x.genero}}</td>
             <td>
                 <!--{{x.foto}}-->
-                <img src="../{{x.foto}}" height = "50">
+                <img src="{{x.foto.url}}" height = "50">
             </td>
             <td>
-                <button type="button" class="btn btn-success">Editar</button>
-                <button type="button" class="btn btn-danger">Eliminar</button>
+                <a href="{% url 'editar' x.id %}" class="btn btn-success" role= "button">Editar</a>
+                <a href="{% url 'eliminar' x.id %}" class="btn btn-danger" role= "button">Eliminar</a>
             </td>
           </tr>
           {% endfor %}
@@ -42,7 +42,7 @@
       <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
     </div>
     <div class="card-footer text-muted">
-        <button type="button" class="btn btn-primary">Adicionar Cliente</button>
+        <a role="button" class="btn btn-primary" href="{% url 'crear' %}">Adicionar Cliente</a>
         <br>Implementando un crud
     </div>
   </div>
