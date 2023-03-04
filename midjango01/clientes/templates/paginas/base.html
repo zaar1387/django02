@@ -1,0 +1,43 @@
+{% load static %}
+<html  lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>{% block titulop %}{% endblock titulop %}</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    </head>
+    <body>
+        <header>
+            <h1 id="demo">aaa</h1>
+        </header>
+        <main>
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="{% url 'inicio' %}">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled">Disabled</a>
+                </li>
+              </ul>
+            {% block mensaje01 %}{% endblock mensaje01 %}
+        </main>
+        <footer>
+            <div id="pie">
+                <p>Atención administrativa:</p>
+                <p>Carrera 57 26-21 CAN, Bogotá - Colombia</p>
+                <p>Lunes a viernes de 08:00 a.m – 12:00 p.m y 02:00 p.m – 05:00 p.m</p>
+                <p>Conmutador o PBX: (601) 5159000</p>
+            </div>
+        </footer>
+        
+        <script>
+            document.getElementById("demo").innerHTML = "POLICIA NACIONAL DE COLOMBIA"
+        </script> 
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    </body>
+</html>
